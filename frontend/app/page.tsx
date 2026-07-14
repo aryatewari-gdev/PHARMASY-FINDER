@@ -1,12 +1,26 @@
 import Image from "next/image";
-import Navbar from "../components/Navbar";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/hero";
+import SearchBar from "@/components/SearchBar";
+import PharmacyCard from "@/components/PharmacyCard";
 
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      
+      <>
       <Navbar />
-      
+      <Hero />
+      <SearchBar />
+      <PharmacyCard
+  name="Apollo Pharmacy"
+  medicine="Paracetamol 650mg"
+  stock={34}
+  price={28}
+  distance="0.8 km"
+  rating={4.8}
+  isOpen={true}
+/>
+      </>
       <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
         <Image
           className="dark:invert"
