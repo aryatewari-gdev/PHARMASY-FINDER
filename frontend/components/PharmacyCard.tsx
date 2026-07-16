@@ -10,20 +10,32 @@ type PharmacyCardProps = {
 
 export default function PharmacyCard(props: PharmacyCardProps) {
   return (
-    <section className="border rounded-lg p-4 shadow-md max-w-sm">
-      <h2 className="text-xl font-bold">{props.name}</h2>
+    <section className="bg-white border rounded-xl shadow-md p-4 max-w-md w-full my-4">
+      <h2 className="text-2xl font-bold text-black">
+        🏥 {props.name}
+      </h2>
 
-      <p>💊 Medicine: {props.medicine}</p>
+      <p className="text-gray-700">
+        💊 Medicine: {props.medicine}
+      </p>
 
-      <p>📦 Stock: {props.stock} strips</p>
+      <p className="text-gray-700">
+        📦 Stock: {props.stock} strips
+      </p>
 
-      <p>💰 Price: ₹{props.price}</p>
+      <p className="text-gray-700">
+        💰 Price: ₹{props.price}
+      </p>
 
-      <p>📍 Distance: {props.distance}</p>
+      <p className="text-gray-700">
+        📍 Distance: {props.distance}
+      </p>
 
-      <p>⭐ Rating: {props.rating}</p>
+      <p className="text-gray-700">
+        ⭐ Rating: {props.rating}
+      </p>
 
-      <p>
+      <p className="font-semibold">
         {props.isOpen ? "🟢 Open Now" : "🔴 Closed"}
       </p>
     </section>

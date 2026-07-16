@@ -1,11 +1,11 @@
 export default function SearchBar() {
   return (
-    <div className="bg-blue-500" >
-      <input className=" focus:outline-none border-2 border-amber-50" 
-        type="text" 
-        placeholder="Search medicines..."
-        
-      />
+    <div className="my-6">
+      <input
+  type="text"
+  placeholder="Search for medicines..."
+  className="border-2 border-black p-3 text-black placeholder-red-500"
+/>
     </div>
   );
 }
