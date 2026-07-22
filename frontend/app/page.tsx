@@ -1,9 +1,15 @@
+"use client";
+
+import { useState } from "react";
+
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
+import Hero from "@/components/hero";
 import SearchBar from "@/components/SearchBar";
 import PharmacyCard from "@/components/PharmacyCard";
 
 export default function Home() {
+  const [search, setSearch] = useState("");
+
   const pharmacies = [
     {
       name: "Apollo Pharmacy",
@@ -26,21 +32,33 @@ export default function Home() {
     {
       name: "WellCare Pharmacy",
       medicine: "Vitamin C",
-      stock: 25,
-      price: 120,
-      distance: "2.4 km",
+      stock: 20,
+      price: 150,
+      distance: "2.3 km",
       rating: 4.9,
       isOpen: true,
-   }
+    },
   ];
+  const filteredPharmacies = pharmacies.filter((pharmacy) =>
+  pharmacy.medicine.toLowerCase().includes(search.toLowerCase())
+);
 
   return (
     <main className="min-h-screen bg-zinc-50 p-6">
       <Navbar />
-      <Hero />
-      <SearchBar />
 
-      {pharmacies.map((pharmacy, index) => (
+      <Hero />
+
+      <SearchBar
+        search={search}
+        setSearch={setSearch}
+      />
+
+      <p className="mb-4 text-lg text-black">
+        Search Value: <strong>{search}</strong>
+      </p>
+
+      {filteredPharmacies.map((pharmacy, index) => (
         <PharmacyCard
           key={index}
           name={pharmacy.name}

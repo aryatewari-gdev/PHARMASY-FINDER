@@ -31,11 +31,11 @@ export default function PharmacyCard(props: PharmacyCardProps) {
         📍 Distance: {props.distance}
       </p>
 
-      <p className="text-gray-700">
+      <p className="text-emerald-800">
         ⭐ Rating: {props.rating}
       </p>
 
-      <p className="font-semibold">
+      <p className="font-semibold text-black">
         {props.isOpen ? "🟢 Open Now" : "🔴 Closed"}
       </p>
     </section>
